@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PawPastel - Pet Shop</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= LOGIN ================= -->
+
+<div id="loginPage">
+
+    <div class="login-card">
+
+        <div class="paw">🐾</div>
+
+        <h1>PawPastel</h1>
+        <p>Happy Pets, Happy Life</p>
+
+        <form id="loginForm">
+
+            <label>Username</label>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Masukkan username"
+            >
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Masukkan password"
+            >
+
+            <button type="submit">
+                LOGIN
+            </button>
+
+        </form>
+
+        <div id="loginMessage"></div>
+
+        <p class="register-text">
+            Belum punya akun?
+            <button type="button" id="registerButton">
+                Register
+            </button>
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= REGISTER ================= -->
+
+<div id="registerPage" class="hidden">
+
+    <div class="login-card">
+
+        <div class="paw">🐾</div>
+
+        <h1>Register</h1>
+
+        <p>Buat akun PawPastel</p>
+
+        <form id="registerForm">
+
+            <label>Username</label>
+
+            <input
+                type="text"
+                id="newUsername"
+                placeholder="Buat username"
+            >
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="newPassword"
+                placeholder="Buat password"
+            >
+
+            <label>Konfirmasi Password</label>
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Ulangi password"
+            >
+
+            <button type="submit">
+                REGISTER
+            </button>
+
+        </form>
+
+        <div id="registerMessage"></div>
+
+        <p class="register-text">
+
+            Sudah punya akun?
+
+            <button type="button" id="backLogin">
+                Login
+            </button>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HALAMAN UTAMA ================= -->
+
+<div id="mainPage" class="hidden">
+
+    <nav>
+
+        <h2>🐾 PawPastel</h2>
+
+        <div>
+
+            <span>
+                Halo, <b id="userDisplay"></b>
+            </span>
+
+            <button id="logoutButton">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <main>
+
+        <section class="hero">
+
+            <h1>
+                Selamat Datang di PawPastel 🐾
+            </h1>
+
+            <p>
+                Toko kebutuhan hewan peliharaan
+                kesayanganmu.
+            </p>
+
+            <button onclick="showProducts()">
+                Lihat Produk
+            </button>
+
+        </section>
+
+
+        <!-- PRODUK -->
+
+        <section id="products">
+
+            <h2>Produk PawPastel</h2>
+
+            <div class="product-container">
+
+                <div class="product">
+                    <h3>🐱 Makanan Kucing</h3>
+                    <p>Rp50.000</p>
+                    <button onclick="buyProduct('Makanan Kucing')">
+                        Beli
+                    </button>
+                </div>
+
+                <div class="product">
+                    <h3>🐶 Makanan Anjing</h3>
+                    <p>Rp75.000</p>
+                    <button onclick="buyProduct('Makanan Anjing')">
+                        Beli
+                    </button>
+                </div>
+
+                <div class="product">
+                    <h3>🐹 Makanan Hamster</h3>
+                    <p>Rp35.000</p>
+                    <button onclick="buyProduct('Makanan Hamster')">
+                        Beli
+                    </button>
+                </div>
+
+                <div class="product">
+                    <h3>🐰 Makanan Kelinci</h3>
+                    <p>Rp40.000</p>
+                    <button onclick="buyProduct('Makanan Kelinci')">
+                        Beli
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="index.js"></script>
+
+</body>
+</html>

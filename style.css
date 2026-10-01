@@ -1,0 +1,394 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffeef5,
+            #eaf7ff
+        );
+
+    min-height: 100vh;
+
+    color: #18324d;
+}
+
+
+/* ================= LOGIN ================= */
+
+#loginPage,
+#registerPage {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+.login-card {
+
+    width: 100%;
+
+    max-width: 400px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.15);
+
+    text-align: center;
+}
+
+
+.paw {
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
+}
+
+
+.login-card h1 {
+
+    margin-bottom: 5px;
+
+    font-size: 32px;
+}
+
+
+.login-card > p {
+
+    color: #71849a;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= INPUT ================= */
+
+form {
+
+    text-align: left;
+}
+
+
+label {
+
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+
+input {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+input:focus {
+
+    border-color: #78bde8;
+}
+
+
+/* ================= BUTTON ================= */
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+form button {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    background: #78bde8;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+
+form button:hover {
+
+    background: #4da5d8;
+
+    transform: translateY(-2px);
+}
+
+
+.register-text {
+
+    margin-top: 20px;
+
+    font-size: 14px;
+}
+
+
+.register-text button {
+
+    background: none;
+
+    color: #e879a8;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+
+#loginMessage,
+#registerMessage {
+
+    margin-top: 15px;
+
+    font-weight: bold;
+
+    min-height: 20px;
+}
+
+
+/* ================= HIDDEN ================= */
+
+.hidden {
+
+    display: none !important;
+}
+
+
+/* ================= NAVBAR ================= */
+
+nav {
+
+    background: #18324d;
+
+    color: white;
+
+    padding: 18px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+nav h2 {
+
+    color: #fff;
+}
+
+
+nav button {
+
+    margin-left: 15px;
+
+    padding: 8px 15px;
+
+    border-radius: 8px;
+
+    background: #e879a8;
+
+    color: white;
+}
+
+
+/* ================= MAIN ================= */
+
+main {
+
+    padding: 30px;
+}
+
+
+.hero {
+
+    background: white;
+
+    padding: 50px 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.08);
+}
+
+
+.hero h1 {
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+
+.hero p {
+
+    margin-bottom: 20px;
+
+    color: #71849a;
+}
+
+
+.hero button {
+
+    background: #e879a8;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+}
+
+
+/* ================= PRODUK ================= */
+
+#products {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+}
+
+
+#products h2 {
+
+    margin-bottom: 20px;
+}
+
+
+.product-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 20px;
+}
+
+
+.product {
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    background: #f7f2e8;
+
+    text-align: center;
+}
+
+
+.product h3 {
+
+    margin-bottom: 15px;
+}
+
+
+.product p {
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+
+.product button {
+
+    background: #78bde8;
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+}
+
+
+.product button:hover {
+
+    background: #4da5d8;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+
+    nav {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+    main {
+
+        padding: 15px;
+    }
+
+    .hero h1 {
+
+        font-size: 27px;
+    }
+
+}
