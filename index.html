@@ -3,219 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>PawPastel - Pet Shop</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <!-- ================= LOGIN ================= -->
-
-<div id="loginPage">
-
-    <div class="login-card">
-
+<div id="loginPage" class="auth-page">
+    <div class="auth-card">
         <div class="paw">🐾</div>
-
         <h1>PawPastel</h1>
-        <p>Happy Pets, Happy Life</p>
+        <p class="subtitle">Happy Pets, Happy Life</p>
 
-        <form id="loginForm">
+        <form id="loginForm" novalidate>
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Masukkan username" autocomplete="username">
 
-            <label>Username</label>
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Masukkan password" autocomplete="current-password">
 
-            <input
-                type="text"
-                id="username"
-                placeholder="Masukkan username"
-            >
-
-            <label>Password</label>
-
-            <input
-                type="password"
-                id="password"
-                placeholder="Masukkan password"
-            >
-
-            <button type="submit">
-                LOGIN
-            </button>
-
+            <button type="submit" class="btn-primary">Login</button>
         </form>
 
-        <div id="loginMessage"></div>
+        <div id="loginMessage" class="message" role="alert"></div>
 
-        <p class="register-text">
+        <p class="switch-text">
             Belum punya akun?
-            <button type="button" id="registerButton">
-                Register
-            </button>
+            <button type="button" id="registerButton" class="link-btn">Register</button>
         </p>
-
     </div>
-
 </div>
-
 
 <!-- ================= REGISTER ================= -->
-
-<div id="registerPage" class="hidden">
-
-    <div class="login-card">
-
+<div id="registerPage" class="auth-page hidden">
+    <div class="auth-card">
         <div class="paw">🐾</div>
-
         <h1>Register</h1>
+        <p class="subtitle">Buat akun PawPastel</p>
 
-        <p>Buat akun PawPastel</p>
+        <form id="registerForm" novalidate>
+            <label for="newUsername">Username</label>
+            <input type="text" id="newUsername" placeholder="Buat username" autocomplete="username">
 
-        <form id="registerForm">
+            <label for="newPassword">Password</label>
+            <input type="password" id="newPassword" placeholder="Minimal 4 karakter" autocomplete="new-password">
 
-            <label>Username</label>
+            <label for="confirmPassword">Konfirmasi Password</label>
+            <input type="password" id="confirmPassword" placeholder="Ulangi password" autocomplete="new-password">
 
-            <input
-                type="text"
-                id="newUsername"
-                placeholder="Buat username"
-            >
-
-            <label>Password</label>
-
-            <input
-                type="password"
-                id="newPassword"
-                placeholder="Buat password"
-            >
-
-            <label>Konfirmasi Password</label>
-
-            <input
-                type="password"
-                id="confirmPassword"
-                placeholder="Ulangi password"
-            >
-
-            <button type="submit">
-                REGISTER
-            </button>
-
+            <button type="submit" class="btn-primary">Register</button>
         </form>
 
-        <div id="registerMessage"></div>
+        <div id="registerMessage" class="message" role="alert"></div>
 
-        <p class="register-text">
-
+        <p class="switch-text">
             Sudah punya akun?
-
-            <button type="button" id="backLogin">
-                Login
-            </button>
-
+            <button type="button" id="backLogin" class="link-btn">Login</button>
         </p>
-
     </div>
-
 </div>
 
-
 <!-- ================= HALAMAN UTAMA ================= -->
-
 <div id="mainPage" class="hidden">
 
     <nav>
-
         <h2>🐾 PawPastel</h2>
-
-        <div>
-
-            <span>
-                Halo, <b id="userDisplay"></b>
-            </span>
-
-            <button id="logoutButton">
-                Logout
-            </button>
-
+        <div class="nav-right">
+            <span>Halo, <b id="userDisplay"></b></span>
+            <button type="button" id="logoutButton" class="btn-pink">Logout</button>
         </div>
-
     </nav>
 
-
     <main>
-
         <section class="hero">
-
-            <h1>
-                Selamat Datang di PawPastel 🐾
-            </h1>
-
-            <p>
-                Toko kebutuhan hewan peliharaan
-                kesayanganmu.
-            </p>
-
-            <button onclick="showProducts()">
-                Lihat Produk
-            </button>
-
+            <h1>Selamat datang di PawPastel 🐾</h1>
+            <p>Toko kebutuhan hewan peliharaan kesayanganmu.</p>
+            <button type="button" id="viewProducts" class="btn-pink">Lihat Produk</button>
         </section>
 
-
-        <!-- PRODUK -->
-
         <section id="products">
-
             <h2>Produk PawPastel</h2>
-
             <div class="product-container">
-
                 <div class="product">
                     <h3>🐱 Makanan Kucing</h3>
                     <p>Rp50.000</p>
-                    <button onclick="buyProduct('Makanan Kucing')">
-                        Beli
-                    </button>
+                    <button type="button" class="buy-btn" data-name="Makanan Kucing">Beli</button>
                 </div>
-
                 <div class="product">
                     <h3>🐶 Makanan Anjing</h3>
                     <p>Rp75.000</p>
-                    <button onclick="buyProduct('Makanan Anjing')">
-                        Beli
-                    </button>
+                    <button type="button" class="buy-btn" data-name="Makanan Anjing">Beli</button>
                 </div>
-
                 <div class="product">
                     <h3>🐹 Makanan Hamster</h3>
                     <p>Rp35.000</p>
-                    <button onclick="buyProduct('Makanan Hamster')">
-                        Beli
-                    </button>
+                    <button type="button" class="buy-btn" data-name="Makanan Hamster">Beli</button>
                 </div>
-
                 <div class="product">
                     <h3>🐰 Makanan Kelinci</h3>
                     <p>Rp40.000</p>
-                    <button onclick="buyProduct('Makanan Kelinci')">
-                        Beli
-                    </button>
+                    <button type="button" class="buy-btn" data-name="Makanan Kelinci">Beli</button>
                 </div>
-
             </div>
-
         </section>
-
     </main>
 
 </div>
 
-
-<!-- JAVASCRIPT -->
-
 <script src="script.js"></script>
-
 </body>
 </html>
