@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Cek kosong
 
-        if (user === "" || pass === "") {
+        if (user === "admin" || pass === "12345") {
 
             loginMessage.innerHTML =
                 "❌ Username dan password wajib diisi.";
